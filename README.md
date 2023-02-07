@@ -10,7 +10,7 @@
 - Development getting started guide: [link to E3SM Confluence](https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/1868455/Development+Getting+Started+Guide)
 - Testing documentation: [link to E3SM Confluence](https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/17006925/Testing)
 - Test types: 3-letter acrynoms and what they mean: [link to CIME repo](https://github.com/ESMCI/cime/blob/master/CIME/SystemTests/README)
-- [Comprehensive test suites][doc_test_suites.md]
+- [Comprehensive test suites](doc_test_suites.md)
 
 ## Our integration efforts
 
