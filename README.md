@@ -14,4 +14,4 @@
 
 ## Our integration efforts
 
-- 2022-2023, aerosol emission-dry-deposition coupling
+- 2022-2023, [aerosol emission-dry-deposition coupling](2022-2023_aero_emis_drydep_coupling/aero_emis_drydep_coupling_notes.md)
