@@ -3,7 +3,7 @@
 ## E3SM policies and procedures
 
 - Code review and new feature process: [official description on E3SM Confluence](https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/3438608385/E3SM+Code+Review+and+New+Feature+Process)
-- Branch, tag, and version name conventions: [link to E3SM Confluence](https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/2523172/Branch+Tag+and+Version+name+conventions)
+- Branch, tag, and version name conventions: [link to E3SM Confluence](https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/2523172/Branch+Tag+and+Version+name+conventions); [Mark Taylor's presentation](https://www.youtube.com/watch?v=08iD2wGuVDg)
 
 ## E3SM documentation
 
