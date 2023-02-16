@@ -1,14 +1,5 @@
 # 1. Porting CondiDiag1.0 code
 
-```
-cd codes
-mkdir CondiDiag1.1 ; cd CondiDiag1.1/
-git clone --recursive git@github.com:PAESCAL-SciDAC5/E3SM-fork.git \
-    CondiDiag1.1_in_EAMv2p
-cd CondiDiag1.1_in_EAMv2p
-git checkout -b huiwanpnnl/atm/CondiDiag1.1_in_EAMv2p
-```
-
 
 ### 1.1 Core contents
 
@@ -58,16 +49,16 @@ git checkout -b huiwanpnnl/atm/CondiDiag1.1_in_EAMv2p
 
 # 4. Port CAPE budget decomposition
 
-  To be on the safe side, changed the module variable `dcapemx` in `zm_conv.F90`
-  to local variable and dummy argument; added intent(in/out/inout) for various
+  To be on the safe side, change the module variable `dcapemx` in `zm_conv.F90`
+  to local variable and dummy argument; add intent(in/out/inout) for various
   dummy arguments of `buoyan_dilute`.
 
-  4.1 Re-implemented Xiaoliang's method of decomposing dCAPE
+## 4.1 Xiaoliang's method of decomposing dCAPE
 
    - dCAPE  = CAPE( new parcel, new environment ) - CAPE( old parcel, old environment )
    - dCAPEp = CAPE( new parcel, new environment ) - CAPE( old parcel, new environment )
    - dCAPEe = CAPE( old parcel, new environment ) - CAPE( old parcel, old environment )
 
-  4.2 Testing 
+## 4.2 Testing 
 
   Scripts can be founds in [`scripts/dCAPE_decomp/`](scripts/dCAPE_decomp/)
