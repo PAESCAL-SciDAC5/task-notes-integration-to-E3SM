@@ -70,4 +70,4 @@ git checkout -b huiwanpnnl/atm/CondiDiag1.1_in_EAMv2p
 
   4.2 Testing 
 
-  Scripts can be founds in `scripts/dCAPE_decomp/`
+  Scripts can be founds in [`scripts/dCAPE_decomp/`](scripts/dCAPE_decomp/)
