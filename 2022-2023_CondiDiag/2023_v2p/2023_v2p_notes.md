@@ -48,8 +48,26 @@ git checkout -b huiwanpnnl/atm/CondiDiag1.1_in_EAMv2p
 - `components/eam/src/control/runtime_opts.F90`:
    - add `call cnd_diag_readnl(nlfilename)`
 
-# 2. Testing
+### 1.5 Testing
+
+  Run and postprocess the 3 use case examples in the CondiDiag1.0 paper,
+  plus a simple CAPE budget analysis (without decomposition).
+  Run scripts and postprocessing scripts can be found in the [scripts directory](./scripts/)
 
 # 3. Port Dec-2022 bug fix for branch runs
 
 # 4. Port CAPE budget decomposition
+
+  To be on the safe side, changed the module variable `dcapemx` in `zm_conv.F90`
+  to local variable and dummy argument; added intent(in/out/inout) for various
+  dummy arguments of `buoyan_dilute`.
+
+  4.1 Re-implemented Xiaoliang's method of decomposing dCAPE
+
+   - dCAPE  = CAPE( new parcel, new environment ) - CAPE( old parcel, old environment )
+   - dCAPEp = CAPE( new parcel, new environment ) - CAPE( old parcel, new environment )
+   - dCAPEe = CAPE( old parcel, new environment ) - CAPE( old parcel, old environment )
+
+  4.2 Testing 
+
+  Scripts can be founds in `scripts/dCAPE_decomp/`
