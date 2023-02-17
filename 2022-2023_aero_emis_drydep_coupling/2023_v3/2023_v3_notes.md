@@ -86,7 +86,7 @@ Script dir: `/qfs/people/wanh895/gitProjects/s5_integration_notes/2022-2023_aero
 
 Run `run_cflx_cpl_opt_1.sh` 3 times using
 - `readonly run='custom-10_1x10_ndays'`
-- `readonly run='custom-10_1x10_ndays'`
+- `readonly run='custom-30_1x10_ndays'`
 - `readonly run='custom-10_2x5_ndays'`
 
 Then use script `check_BFB.bash` to check results:
