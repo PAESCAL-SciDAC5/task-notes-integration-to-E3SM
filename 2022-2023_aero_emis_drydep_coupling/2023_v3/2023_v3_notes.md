@@ -1,7 +1,7 @@
 
 # Code branch
 
-  [git push -u origin huiwanpnnl/atm/aerosol-process-coupling-202302](https://github.com/E3SM-Project/v3atm/tree/huiwanpnnl/atm/aerosol-process-coupling-202302)
+  [`huiwanpnnl/atm/aerosol-process-coupling-202302`](https://github.com/E3SM-Project/v3atm/tree/huiwanpnnl/atm/aerosol-process-coupling-202302) in the [`E3SM-Project/v3atm` repo](https://github.com/E3SM-Project/v3atm)
 
 # Design document and testing results
 
@@ -15,9 +15,11 @@
 
 # Work log
 
-  After considering and exploring several possibilities, I now try to follow Wuyin's suggestion
-  to create a new branch in the `v3atm` repo off its current master (sync'ed with E3SM master
-  by Wuyin), then cherry-pick my changes made to `NGD_v3atm`.
+After considering and exploring several possibilities, I now try to follow Wuyin's suggestion
+to 
+- create a new branch in the `v3atm` repo off its current master 
+(which was sync'ed with E3SM master by Wuyin on 2023-02-17), then 
+- cherry-pick my changes made to `NGD_v3atm`.
 
 ## Checking out master and create baseline results
 
@@ -25,8 +27,9 @@
 ssh compy
 cd ~/codes/scidac4_int/
 git clone --recursive git@github.com:E3SM-Project/v3atm.git v3atm_master_202302
-
 ```
+
+BASELINE TO BE CREATED
 
 ## New branch
 
@@ -44,7 +47,6 @@ Start cherry-picking
 #-------------
 # 1st commit
 #-------------
-
 git cherry-pick 256766f98da757509879bacc2a09bb7bdaec5e8e
 git log  # check commit message
 git commit --amend   # revise commit message
@@ -52,7 +54,6 @@ git commit --amend   # revise commit message
 #-------------
 # 2nd commit
 #-------------
-
 git cherry-pick 316b4246ba57c0b90dc21a937ef12f448d78ec68
 
 # resolve conflicts
