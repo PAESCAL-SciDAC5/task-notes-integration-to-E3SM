@@ -96,3 +96,16 @@ c3724469e0e4af3715e0e22dce3dce10  atm_custom-10_1x10_ndays.txt  # branch
 c3724469e0e4af3715e0e22dce3dce10  atm_custom-10_2x5_ndays.txt   # branch
 c3724469e0e4af3715e0e22dce3dce10  atm_custom-30_1x10_ndays.txt  # branch
 ```
+
+Run `run_cflx_cpl_opt_2.sh` 3 times using
+- `readonly run='custom-10_1x10_ndays'`
+- `readonly run='custom-30_1x10_ndays'`
+- `readonly run='custom-10_2x5_ndays'`
+
+Then use script `check_BFB.bash` to check results:
+```
+2deca819b7f9911b64229ee60ce1aed5  atm_custom-10_1x10_ndays.txt
+2deca819b7f9911b64229ee60ce1aed5  atm_custom-10_2x5_ndays.txt
+2deca819b7f9911b64229ee60ce1aed5  atm_custom-30_1x10_ndays.txt
+```
+
