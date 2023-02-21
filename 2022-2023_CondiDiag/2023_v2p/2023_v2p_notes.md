@@ -54,10 +54,8 @@ This is to make sure the simulation won't abort if a user requests new CondiDiag
 ## 4.0 Preparation
 
   To be on the safe side, 
-  - change the module variable `dcapemx` in `zm_conv.F90`
-  so that it becomes a local variable and adummy argument; 
-  - add intent(in/out/inout) for various
-  dummy arguments of `buoyan_dilute`.
+  - change `dcapemx` in `zm_conv.F90` from a module variable to a local variable or a dummy argument; 
+  - add intent(in/out/inout) for various dummy arguments of `buoyan_dilute`.
 
 ## 4.1 Xiaoliang's method of decomposing dCAPE
 
