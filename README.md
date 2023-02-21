@@ -31,6 +31,9 @@
 - Development getting started guide: [link to E3SM Confluence](https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/1868455/Development+Getting+Started+Guide)
 - Testing documentation: [link to E3SM Confluence](https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/17006925/Testing)
 - Test types: 3-letter acrynoms and what they mean: [link to CIME repo](https://github.com/ESMCI/cime/blob/master/CIME/SystemTests/README)
+- Test definition modifiers, e.g., how to change test length: [link to E3SM Confluence](https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/17006934/Modifying+the+tests)
 - [Comprehensive test suites](info/doc_e3sm_test_suites.md)
+- Using `create_test` in E3SM: [link to CIME user guide](https://esmci.github.io/cime/versions/master/html/users_guide/testing.html#using-create-test-e3sm)
+- Including test mods: [link to CIME user guide](https://esmci.github.io/cime/versions/master/html/users_guide/testing.html#testname-syntax)
 
 
