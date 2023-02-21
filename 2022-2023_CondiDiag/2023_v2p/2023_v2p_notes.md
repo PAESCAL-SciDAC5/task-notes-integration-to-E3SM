@@ -67,4 +67,4 @@ This is to make sure the simulation won't abort if a user requests new CondiDiag
    
 ## 4.2 Testing 
 
-  Scripts can be founds in [`scripts/dCAPE_decomp/`](scripts/dCAPE_decomp/)
+  The run script and postprocessing script can be found in [`scripts/dCAPE_decomp/`](scripts/dCAPE_decomp/). Sample run produces a 1-month average.
