@@ -10,7 +10,7 @@ This is the landing page of PAESAL's task team working on integration with the E
 
 ## News
 
-### *Febrary 2023: CondiDiag1.1 ported to E3SMv2.1*
+### *February 2023: CondiDiag1.1 ported to E3SMv2.1*
 
   CondiDiag version 1.1, which contains the basic functionalities described in [Wan et al. (2022)](https://gmd.copernicus.org/articles/15/3205/2022/) *plus* the dCAPE decomposition designed by Xiaoliang Song and Guangzhang, has been ported to a 2023-02-12 commit from E3SM's master branch (which is very similar to tag `maint-2.1`).
 
