@@ -116,7 +116,7 @@ Then edit variable `test_dir` in script `check_BFB.bash` and run the script to c
 2deca819b7f9911b64229ee60ce1aed5  atm_custom-30_1x10_ndays.txt
 ```
 
-# 4. "Super-BFB" testing using CIME's `create_test` command
+# 4. "Super-BFB" testing using `create_test`
 
 Wuyin, Hui, and Jianfeng met on 2023-02-22 and chose the following stratege:
 
