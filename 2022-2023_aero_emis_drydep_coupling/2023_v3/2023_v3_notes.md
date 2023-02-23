@@ -142,39 +142,25 @@ Results from the comparison:
 (Note that the `--wait` flag was used in the script linked above to ask `create_test` to wait for tests to finish and report the final outcome shown below rather than exit and give the "PEND" status while some tests are still running.)
 
 ```
-Waiting for tests to finish
 PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel RUN
-    Case dir: /compyfs/wanh895/e3sm_scratch/ERP_Ln18.ne4_oQU240.F2010.compy_intel.C.20230223_105511_e5gfvy
 PASS ERS_D.ne4_oQU240.F2010.compy_intel.eam-hommexx RUN
-    Case dir: /compyfs/wanh895/e3sm_scratch/ERS_D.ne4_oQU240.F2010.compy_intel.eam-hommexx.C.20230223_105511_e5gfvy
 PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 RUN
-    Case dir: /compyfs/wanh895/e3sm_scratch/ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2.C.20230223_105511_e5gfvy
 PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 RUN
-    Case dir: /compyfs/wanh895/e3sm_scratch/ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0.C.20230223_105511_e5gfvy
 PASS SMS.ne4_oQU240.F2010.compy_intel.eam-cosplite RUN
-    Case dir: /compyfs/wanh895/e3sm_scratch/SMS.ne4_oQU240.F2010.compy_intel.eam-cosplite.C.20230223_105511_e5gfvy
 PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel RUN
-    Case dir: /compyfs/wanh895/e3sm_scratch/SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.C.20230223_105511_e5gfvy
 PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel RUN
-    Case dir: /compyfs/wanh895/e3sm_scratch/SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.C.20230223_105511_e5gfvy
 PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_pg2 RUN
-    Case dir: /compyfs/wanh895/e3sm_scratch/SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_pg2.C.20230223_105511_e5gfvy
 PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 RUN
-    Case dir: /compyfs/wanh895/e3sm_scratch/SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2.C.20230223_105511_e5gfvy
 PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 RUN
-    Case dir: /compyfs/wanh895/e3sm_scratch/SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0.C.20230223_105511_e5gfvy
 PASS SMS_Ln9.ne4_oQU240.F2010.compy_intel.eam-outfrq9s RUN
-    Case dir: /compyfs/wanh895/e3sm_scratch/SMS_Ln9.ne4_oQU240.F2010.compy_intel.eam-outfrq9s.C.20230223_105511_e5gfvy
 PASS SMS_R_Ld5.ne4_ne4.FSCM-ARM97.compy_intel.eam-scm RUN
-    Case dir: /compyfs/wanh895/e3sm_scratch/SMS_R_Ld5.ne4_ne4.FSCM-ARM97.compy_intel.eam-scm.C.20230223_105511_e5gfvy
-test-scheduler took 1846.777936220169 seconds
+test-scheduler took 1704.5967469215393 seconds
 ```
 
 To see more details of the test results, use
 
 ```
-cd /compyfs/wanh895/e3sm_scratch
-./cs.status.20230223_105511_e5gfvy
+/compyfs/wanh895/e3sm_scratch/cs.status.20230223_130504_dsz319
 ```
 
 
@@ -182,28 +168,16 @@ cd /compyfs/wanh895/e3sm_scratch
 
 Script: [`3_e3sm_atm_stealth_tests.sh`](./scripts_for_testing_using_CIME/3_e3sm_atm_stealth_tests.sh)
 
-Results:
+Summary of results:
 
 ```
-  ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 (Overall: PASS) details:
-    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 CREATE_NEWCASE
-    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 XML
-    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 SETUP
-    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 SHAREDLIB_BUILD time=765
-    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 MODEL_BUILD time=1077
-    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 SUBMIT
-    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 RUN time=134
-    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 COMPARE_base_rest
-    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 MEMLEAK insuffiencient data for memleak test
-    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 SHORT_TERM_ARCHIVER
-  SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 (Overall: PASS) details:
-    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 CREATE_NEWCASE
-    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 XML
-    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 SETUP
-    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 SHAREDLIB_BUILD time=469
-    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 MODEL_BUILD time=289
-    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 SUBMIT
-    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 RUN time=92
-    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 MEMLEAK insuffiencient data for memleak test
-    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 SHORT_TERM_ARCHIVER
+PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 RUN
+PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 RUN
+test-scheduler took 1537.8152439594269 seconds
+```
+
+To see more detailed results, use
+
+```
+/compyfs/wanh895/e3sm_scratch/cs.status.20230223_130551_bfgg7l
 ```
