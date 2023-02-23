@@ -5,7 +5,7 @@ CIME test suites are collections of individual tests defined in [`cime_config/te
 ```
 ./created_test ${SUITE_NAME}
 ```
-to run multiple tests without having to issue one `create_test` command for each of them.
+to run multiple tests without having to issue one `create_test` command for each test.
 
 # Test suite examples
 
@@ -38,7 +38,7 @@ to run multiple tests without having to issue one `create_test` command for each
     },
 ```
 
-Note that the `.eam-...` strings occuring after the compset names are the so-called "testmods" used for specifying namelist changes or `xmlchange` commands needed for the tests, see [explanation here](doc_testmods.md).
+Note that the `.eam-...` strings occuring after compset names are the so-called "testmods", which specify namelist changes or `xmlchange` commands needed for the tests, see [explanation here](doc_testmods.md).
 
 ## The "super-BFB" test suite
 
