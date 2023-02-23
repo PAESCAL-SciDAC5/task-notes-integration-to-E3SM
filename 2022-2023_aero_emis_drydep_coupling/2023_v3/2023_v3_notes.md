@@ -139,7 +139,7 @@ Scripts:
 
 Results from the comparison:
 
-(Note that the `--wait` flag was used in the script linked above to ask `create_test` to wait for tests to finish and report the final outcome shown below rather than give the "PEND" status since some tests are still running.)
+(Note that the `--wait` flag was used in the script linked above to ask `create_test` to wait for tests to finish and report the final outcome shown below rather than exit and give the "PEND" status while some tests are still running.)
 
 ```
 Waiting for tests to finish
