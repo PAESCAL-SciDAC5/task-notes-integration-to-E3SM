@@ -1,11 +1,11 @@
 
 # Introduction
 
-CIME test suites are collections of individual tests defined in [`cime_config/tests.py`](https://github.com/E3SM-Project/E3SM/blob/master/cime_config/tests.py). We can use a single command
+CIME test suites are collections of individual tests defined in [`cime_config/tests.py`](https://github.com/E3SM-Project/E3SM/blob/master/cime_config/tests.py). Test suites allow the use of a single command like
 ```
 ./created_test ${SUITE_NAME}
 ```
-to run the entire collection without having to issue one `create_test` command for each test.
+to run multiple tests without having to issue one `create_test` command for each of them.
 
 # Test suite examples
 
