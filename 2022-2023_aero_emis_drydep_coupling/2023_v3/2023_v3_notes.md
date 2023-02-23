@@ -139,28 +139,20 @@ Scripts:
 
 Results from the comparison:
 
-(Note that the `--wait` flag was used in the script linked above to ask `create_test` to wait for tests to finish and report the final outcome shown below rather than exit and give the "PEND" status while some tests are still running.)
-
 ```
-PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel RUN
-PASS ERS_D.ne4_oQU240.F2010.compy_intel.eam-hommexx RUN
-PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 RUN
-PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 RUN
-PASS SMS.ne4_oQU240.F2010.compy_intel.eam-cosplite RUN
-PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel RUN
-PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel RUN
-PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_pg2 RUN
-PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 RUN
-PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 RUN
-PASS SMS_Ln9.ne4_oQU240.F2010.compy_intel.eam-outfrq9s RUN
-PASS SMS_R_Ld5.ne4_ne4.FSCM-ARM97.compy_intel.eam-scm RUN
-test-scheduler took 1704.5967469215393 seconds
-```
-
-To see more details of the test results, use
-
-```
-/compyfs/wanh895/e3sm_scratch/cs.status.20230223_130504_dsz319
+/compyfs/wanh895/e3sm_scratch/cs.status.20230223_130504_dsz319 | grep BASELINE
+    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel BASELINE baseline_v3atm_master_202302:
+    PASS ERS_D.ne4_oQU240.F2010.compy_intel.eam-hommexx BASELINE baseline_v3atm_master_202302:
+    PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 BASELINE baseline_v3atm_master_202302:
+    PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 BASELINE baseline_v3atm_master_202302:
+    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel BASELINE baseline_v3atm_master_202302:
+    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel BASELINE baseline_v3atm_master_202302:
+    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_pg2 BASELINE baseline_v3atm_master_202302:
+    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 BASELINE baseline_v3atm_master_202302:
+    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 BASELINE baseline_v3atm_master_202302:
+    PASS SMS_Ln9.ne4_oQU240.F2010.compy_intel.eam-outfrq9s BASELINE baseline_v3atm_master_202302:
+    PASS SMS.ne4_oQU240.F2010.compy_intel.eam-cosplite BASELINE baseline_v3atm_master_202302:
+    PASS SMS_R_Ld5.ne4_ne4.FSCM-ARM97.compy_intel.eam-scm BASELINE baseline_v3atm_master_202302:
 ```
 
 
