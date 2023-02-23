@@ -1,4 +1,4 @@
-# 1. Porting CondiDiag1.0 code
+# 1. Port CondiDiag1.0
 
 
 ### 1.1 Core contents
@@ -21,7 +21,7 @@
 
 - Make `buoyan_dilute` and `limcnv` public in `zm_conv.F90`
 
-### 1.2 Checkpoints and data structure
+### 1.2 Checkpoints and dummy arguments
 
 - `components/eam/src/physics/cam/physpkg.F90`
 - `components/eam/src/physics/cam/clubb_intr.F90`
@@ -43,15 +43,19 @@
 
   Run and postprocess the 3 use case examples in the CondiDiag1.0 paper,
   plus a simple CAPE budget analysis (without decomposition).
-  Run scripts and postprocessing scripts can be found in the [scripts directory](./scripts/)
+  Run scripts and postprocessing scripts can be found in the [scripts directory](./scripts/).
 
 # 3. Port Dec-2022 bug fix for branch runs
 
+This is to make sure the simulation won't abort if a user requests new CondiDiag output when doing a branch run.
+
 # 4. Port CAPE budget decomposition
 
-  To be on the safe side, change the module variable `dcapemx` in `zm_conv.F90`
-  to local variable and dummy argument; add intent(in/out/inout) for various
-  dummy arguments of `buoyan_dilute`.
+## 4.0 Preparation
+
+  To be on the safe side, 
+  - change `dcapemx` in `zm_conv.F90` from a module variable to a local variable or a dummy argument; 
+  - add intent(in/out/inout) for various dummy arguments of `buoyan_dilute`.
 
 ## 4.1 Xiaoliang's method of decomposing dCAPE
 
@@ -59,6 +63,8 @@
    - dCAPEp = CAPE( new parcel, new environment ) - CAPE( old parcel, new environment )
    - dCAPEe = CAPE( old parcel, new environment ) - CAPE( old parcel, old environment )
 
+   The dCAPE calculation and decomposition is calculated in subroutine `compute_cape_diags` in `components/eam/src/physics/cam/misc_diagnostics.F90`.
+   
 ## 4.2 Testing 
 
-  Scripts can be founds in [`scripts/dCAPE_decomp/`](scripts/dCAPE_decomp/)
+  The run script and postprocessing script can be found in [`scripts/dCAPE_decomp/`](scripts/dCAPE_decomp/). Sample run produces a 1-month average.
