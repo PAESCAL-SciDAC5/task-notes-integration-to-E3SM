@@ -40,6 +40,12 @@ to run multiple tests without having to issue one `create_test` command for each
 
 Note that the `.eam-...` strings occuring after compset names are the so-called "testmods", which specify namelist changes or `xmlchange` commands needed for the tests, see [explanation here](doc_testmods.md).
 
+To run the `e3sm_atm_developer` suite and compare results with the baseline of the master branch, use
+```
+cd ${CODE_ROOT}/cime/scripts
+./create_test e3sm_atm_developer --compare -b master
+```
+
 ## The "super-BFB" test suite
 
 
