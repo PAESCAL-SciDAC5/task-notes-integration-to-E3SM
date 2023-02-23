@@ -1,7 +1,5 @@
 
-"Testmods" refers to the namelist changes and `xmlchange` commands that need to be included when executing the `create_test` command.
-
-Here is the explanation from the [CIME user guide](https://esmci.github.io/cime/versions/master/html/users_guide/testing.html#group-testmods).
+"Testmods" refers to the namelist changes and `xmlchange` commands to be included when executing the `create_test` command. Here is the explanation from the [CIME user guide](https://esmci.github.io/cime/versions/master/html/users_guide/testing.html#group-testmods).
 
 
 ## Wuyin's `20tr_v3atm` example
