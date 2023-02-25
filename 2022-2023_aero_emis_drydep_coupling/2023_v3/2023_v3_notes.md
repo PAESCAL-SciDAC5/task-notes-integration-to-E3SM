@@ -1,25 +1,25 @@
 
-# Code branch
+# Code
 
-  [`huiwanpnnl/atm/aerosol-process-coupling-202302`](https://github.com/E3SM-Project/v3atm/tree/huiwanpnnl/atm/aerosol-process-coupling-202302) in the [`E3SM-Project/v3atm`](https://github.com/E3SM-Project/v3atm) repo.
+Branch [`huiwanpnnl/atm/aerosol-process-coupling-202302`](https://github.com/E3SM-Project/v3atm/tree/huiwanpnnl/atm/aerosol-process-coupling-202302) in the [`E3SM-Project/v3atm`](https://github.com/E3SM-Project/v3atm) repo.
 
 # Design document and testing results
 
-  See [webpage](https://acme-climate.atlassian.net/wiki/spaces/NGDAP/pages/3684466689/Aerosol+process+coupling+integration) on E3SM's Confluence.
+See [webpage](https://acme-climate.atlassian.net/wiki/spaces/NGDAP/pages/3684466689/Aerosol+process+coupling+integration) on E3SM's Confluence.
 
 # PR 
 
-  ADD LINK HERE
+ADD LINK HERE
 
 ----------
 
 # Work log
 
-After considering and exploring several possibilities, I now try to follow Wuyin's suggestion
+After considering and exploring several possibilities, I followed Wuyin's suggestion
 to 
 - create a new branch in the `v3atm` repo off its current master 
 (which was sync'ed with E3SM master by Wuyin on 2023-02-17), then 
-- cherry-pick my changes made to `NGD_v3atm`.
+- cherry-pick my changes made on top of the `NGD_v3atm` during the previous round of integration efforts.
 
 ## 1. Checking out master and creating reference results
 
@@ -120,25 +120,25 @@ Then edit variable `test_dir` in script `check_BFB.bash` and run the script to c
 
 ## 4.1 Our method
 
-Wuyin, Hui, and Jianfeng met on 2023-02-22 and chose the following stratege:
+Wuyin, Hui, and Jianfeng met on 2023-02-22 and chose the following strategy:
 
 1. Create a baseline for the `e3sm_atm_developer` test suites using `master`, then run the same test suite using the new branch and compare with the baseline to verify that all tests pass.
 2. Add a new test suite `e3sm_atm_stealth` that contains a `ERP` and an `SMS_D` with the new feature turned on. Verify that both tests pass.
 
 Note that step 2 requires 
 
-- defining a new "testmod" (which is named in this case `eam-cflx_cpl_2`), and 
+- defining a new set of "testmods" `eam-cflx_cpl_2`, and 
 - creating/updating the `e3sm_atm_stealth` test suite in `cime_config/tests.py` and adding the `ERP` and `SMS_D` tests with the string `.eam-cflx_cpl_2` appended.
 
 These are done in commit [4d91f6](https://github.com/E3SM-Project/v3atm/commit/4d91f61a79f71b6b96466abde06ba439c01d1a81).
 
 ## 4.2 Our script
 
-[`cime_tests_aerosol-process-coupling.sh`](scripts_for_testing_using_CIME/cime_tests_aerosol-process-coupling.sh)
+The script [`cime_tests_aerosol-process-coupling.sh`](scripts_for_testing_using_CIME/cime_tests_aerosol-process-coupling.sh) clones `master` and the feature branch, then do the tests described above.
 
 ## 4.3 Test results with the stealth feature turned off
 
-Commands for checking the outcome of comparison with baseline:
+Commands for checking the results of comparison with baseline:
 
 ```
 cd /compyfs/wanh895/e3sm_scratch/TEST_aerosol-process-coupling-202302_20230224-171857
