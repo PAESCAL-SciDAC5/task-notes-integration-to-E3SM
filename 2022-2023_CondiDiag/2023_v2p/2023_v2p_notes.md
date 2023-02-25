@@ -127,7 +127,7 @@ The test suite is defined as
 The script [`cime_tests_CondiDiag.sh`](scripts/cime_tests/cime_tests_CondiDiag.sh) clones `master` and the feature branch, then do the tests described above.
 
 
-## 2.3 Test results with the stealth feature turned off
+## 2.3 Test results with the feature turned off
 
 Commands for checking the results of comparison with baseline:
 
@@ -154,7 +154,7 @@ Results:
 ```
 
 
-## 2.4 Test results with the stealth feature turned on
+## 2.4 Test results with the feature turned on
 
 Commands:
 
