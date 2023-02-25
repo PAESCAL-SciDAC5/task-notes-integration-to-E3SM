@@ -25,7 +25,7 @@ Sample run scripts and postprocessing scripts can be found [here](2022-2023_Cond
 ## Our code integration efforts
 
 - 2022-2023, [aerosol emission-dry-deposition coupling](2022-2023_aero_emis_drydep_coupling/aero_emis_drydep_coupling_notes.md)
-- 2022-2023, [CondiDiag1.1](2022-2023_CondiDiag/)
+- 2022-2023, [CondiDiag1.1](2022-2023_CondiDiag/2023_v2p/2023_v2p_notes.md)
 
 
 ---
