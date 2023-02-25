@@ -123,7 +123,7 @@ Then edit variable `test_dir` in script `check_BFB.bash` and run the script to c
 Wuyin, Hui, and Jianfeng met on 2023-02-22 and chose the following strategy:
 
 1. Create a baseline for the `e3sm_atm_developer` test suites using `master`, then run the same test suite using the new branch and compare with the baseline to verify that all tests pass.
-2. Add a new test suite `e3sm_atm_stealth` that contains a `ERP` and an `SMS_D` with the new feature turned on. Verify that both tests pass.
+2. Add a new test suite `e3sm_atm_stealth` that contains an `ERP` and an `SMS_D` with the new feature turned on. Verify that both tests pass.
 
 Note that step 2 requires 
 
