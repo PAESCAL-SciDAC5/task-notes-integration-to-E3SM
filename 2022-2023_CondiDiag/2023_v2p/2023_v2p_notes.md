@@ -92,7 +92,7 @@ Commits [4967d24](https://github.com/PAESCAL-SciDAC5/E3SM-fork/commit/4967d24149
    
 **Testing**
 
-  Do a 1-month run and write out monthly averages. The run script and postprocessing script can be found in [`scripts/user_cases/dCAPE_decomp/`](scripts/use_cases/dCAPE_decomp/). 
+  Do a 1-month run and write out monthly and daily averages. The run script and postprocessing script can be found in [`scripts/user_cases/dCAPE_decomp/`](scripts/use_cases/dCAPE_decomp/). 
 
 # 2. "Super-BFB" testing
 
