@@ -1,11 +1,29 @@
-# 1. Porting CondiDiag1.0
+# Code
 
+Branch [huiwanpnnl/atm/CondiDiag1.1_in_EAMv2p](https://github.com/PAESCAL-SciDAC5/E3SM-fork/tree/huiwanpnnl/atm/CondiDiag1.1_in_EAMv2p) in PAESCAL's [E3SM fork](https://github.com/PAESCAL-SciDAC5/E3SM-fork).
 
-### 1.1 Core contents
+# Desing document
+
+See [webpage](https://acme-climate.atlassian.net/wiki/spaces/NGDAP/pages/3691741185/CondiDiag1.1+integration) on E3SM's Confluence.
+
+# PR
+
+ADD LINK HERER
+
+---
+---
+
+# Work log
+
+## Porting the code
+
+### 1.1 CondiDiag1.0
+
+**Core contents**
 
 - Add namelist variables in `components/eam/bld/namelist_files/namelist_definition.xml`
 
-- Copy from 202205 port, subdir `components/eam/src/physics/cam/`
+- Copy from a 202205 port the subdir `components/eam/src/physics/cam/`:
   - `conditional_diag.F90`
   - `conditional_diag_main.F90`
   - `conditional_diag_output_utils.F90`
@@ -21,43 +39,43 @@
 
 - Make `buoyan_dilute` and `limcnv` public in `zm_conv.F90`
 
-### 1.2 Checkpoints and dummy arguments
+**Checkpoints and dummy arguments**
 
 - `components/eam/src/physics/cam/physpkg.F90`
 - `components/eam/src/physics/cam/clubb_intr.F90`
 
-### 1.3 Restart
+**Restart**
 
 - `components/eam/src/physics/cam/restart_physics.F90`
 - `components/eam/src/control/cam_restart.F90`
 - `components/eam/src/control/cam_comp.F90`
 
-### 1.4 Misc
+**Miscellaneous**
 
 - `components/eam/src/control/cam_history_support.F90`:
    - increase value of parameter `fieldname_len` from 24 to 34.
 - `components/eam/src/control/runtime_opts.F90`:
    - add `call cnd_diag_readnl(nlfilename)`
 
-### 1.5 Testing
+**Testing**
 
   Run and postprocess the 3 use case examples in the CondiDiag1.0 paper,
   plus a simple CAPE budget analysis (without decomposition).
-  Run scripts and postprocessing scripts can be found in the [scripts directory](./scripts/).
+  Run scripts and postprocessing scripts can be found in the [scripts directory](./scripts/use_cases/).
 
-# 3. Porting Dec-2022 bug fix for branch runs
+### 1.2 Porting the Dec-2022 bug fix for branch runs
 
 This is to make sure the simulation won't abort if a user requests new CondiDiag output when doing a branch run.
 
-# 4. Porting dCAPE decomposition
+### 1.3 Porting dCAPE decomposition
 
-## 4.0 Preparation
+**Preparation**
 
   To be on the safe side, 
   - change `dcapemx` in `zm_conv.F90` from a module variable to a local variable or a dummy argument; 
   - add intent(in/out/inout) for various dummy arguments of `buoyan_dilute`.
 
-## 4.1 Xiaoliang's method of decomposing dCAPE
+**Xiaoliang's method of decomposing dCAPE**
 
    - dCAPE  = CAPE( new parcel, new environment ) - CAPE( old parcel, old environment )
    - dCAPEp = CAPE( new parcel, new environment ) - CAPE( old parcel, new environment )
@@ -65,15 +83,15 @@ This is to make sure the simulation won't abort if a user requests new CondiDiag
 
    The dCAPE calculation and decomposition is calculated in subroutine `compute_cape_diags` in `components/eam/src/physics/cam/misc_diagnostics.F90`.
    
-## 4.2 Testing 
+**Testing**
 
-  The run script and postprocessing script can be found in [`scripts/dCAPE_decomp/`](scripts/dCAPE_decomp/). Sample run produces a 1-month average.
+  Do a 1-month run and write out monthly averages. The run script and postprocessing script can be found in [`scripts/user_cases/dCAPE_decomp/`](scripts/use_cases/dCAPE_decomp/). 
 
-# 5. "Super-BFB" testing
+# 2. "Super-BFB" testing
 
-## 5.1 Our method
+## 2.1 Our method
 
-Wuyin, Hui, and Jianfeng met on 2023-02-22 and chose the following stratege:
+Wuyin, Hui, and Jianfeng met on 2023-02-22 and chose the following strategy:
 
 1. Create a baseline for the `e3sm_atm_developer` test suites using `master`, then run the same test suite using the new branch and compare with the baseline to verify that all tests pass.
 2. Add a new test suite `eam_condidiag` that contains a few `ERP` and `SMS_D` tests with the new feature turned on. Verify that all tests pass.
@@ -97,11 +115,11 @@ Here is how the new test suite looks like:
         },
 ```
 
-## 5.2 Our script
+## 2.2 Our script
 
 [`cime_tests_CondiDiag.sh`](scripts/cime_tests/cime_tests_CondiDiag.sh)
 
-## 5.3 Test results with the stealth feature turned off
+## 2.3 Test results with the stealth feature turned off
 
 Commands for checking the outcome of comparison with baseline:
 
@@ -128,7 +146,7 @@ Results:
 ```
 
 
-## 4.4 Test results with the stealth feature turned on
+## 2.4 Test results with the stealth feature turned on
 
 Commands:
 
