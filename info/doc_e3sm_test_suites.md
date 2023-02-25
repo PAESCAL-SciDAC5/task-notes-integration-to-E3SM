@@ -38,9 +38,14 @@ to run multiple tests without having to issue one `create_test` command for each
     },
 ```
 
+## Testmods
+
 Note that the `.eam-...` strings occuring after compset names are the so-called "testmods", which specify namelist changes or `xmlchange` commands needed for the tests, see [explanation here](doc_testmods.md).
 
-To run the `e3sm_atm_developer` suite and compare results with the baseline of the master branch, use
+## Usage
+
+To run the `e3sm_atm_developer` suite and compare results with a baseline named `master` stored in the computer system's baseline area (e.g., `/compyfs/e3sm_baselines/${COMPILER}` on compy), use
+
 ```
 cd ${CODE_ROOT}/cime/scripts
 ./create_test e3sm_atm_developer --compare -b master
@@ -48,4 +53,5 @@ cd ${CODE_ROOT}/cime/scripts
 
 ## The "super-BFB" test suite
 
+The "super-BFB" test suite is still being developed by the E3SM team. Here is [a sample script](../2022-2023_CondiDiag/2023_v2p/scripts/cime_tests/cime_tests_CondiDiag.sh) we developed for PAESCAL before an official method is announced.
 

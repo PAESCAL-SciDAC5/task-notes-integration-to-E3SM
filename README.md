@@ -29,7 +29,14 @@ Sample run scripts and postprocessing scripts can be found [here](2022-2023_Cond
 
 
 ---
-## Useful links
+## Notes
+
+### Code testing using CIME
+
+- `create_test` - [basics, examples, and quick lookups](info/doc_create_test.md)
+- Using [comprehensive test suites](info/doc_e3sm_test_suites.md)
+- How to modify test settings by specifying ["testmods"](info/doc_testmods.md) 
+
 
 ### E3SM policies, procedures, and documentation
 
@@ -37,10 +44,4 @@ Sample run scripts and postprocessing scripts can be found [here](2022-2023_Cond
 - Branch, tag, and version name conventions: [link to E3SM Confluence](https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/2523172/Branch+Tag+and+Version+name+conventions)
 - Development getting started guide: [link to E3SM Confluence](https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/1868455/Development+Getting+Started+Guide)
 - Testing documentation: [link to E3SM Confluence](https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/17006925/Testing)
-
-### Testing using CIME
-
-- `create_test` - [basics, examples, and quick lookups](info/doc_create_test.md)
-- Using [comprehensive test suites](info/doc_e3sm_test_suites.md)
-- How to modify test settings by specifying ["testmods"](info/doc_testmods.md) 
 

@@ -118,6 +118,8 @@ Then edit variable `test_dir` in script `check_BFB.bash` and run the script to c
 
 # 4. "Super-BFB" testing using `create_test`
 
+## 4.1 Our method
+
 Wuyin, Hui, and Jianfeng met on 2023-02-22 and chose the following stratege:
 
 1. Create a baseline for the `e3sm_atm_developer` test suites using `master`, then run the same test suite using the new branch and compare with the baseline to verify that all tests pass.
@@ -130,46 +132,49 @@ Note that step 2 requires
 
 These are done in commit [4d91f6](https://github.com/E3SM-Project/v3atm/commit/4d91f61a79f71b6b96466abde06ba439c01d1a81).
 
-## 4.1 Stealth feature turned off
+## 4.2 Our script
 
-Scripts:
+[`cime_tests_aerosol-process-coupling.sh`](scripts_for_testing_using_CIME/cime_tests_aerosol-process-coupling.sh)
 
-- [`1_e3sm_atm_developer_baseline.sh`](./scripts_for_testing_using_CIME/1_e3sm_atm_developer_baseline.sh)
-- [`2_e3sm_atm_developer_compare.sh`](./scripts_for_testing_using_CIME/2_e3sm_atm_developer_compare.sh)
+## 4.3 Test results with the stealth feature turned off
 
-Results from the comparison:
+Commands for checking the outcome of comparison with baseline:
 
 ```
-/compyfs/wanh895/e3sm_scratch/cs.status.20230223_130504_dsz319 | grep BASELINE
-    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel BASELINE baseline_v3atm_master_202302:
-    PASS ERS_D.ne4_oQU240.F2010.compy_intel.eam-hommexx BASELINE baseline_v3atm_master_202302:
-    PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 BASELINE baseline_v3atm_master_202302:
-    PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 BASELINE baseline_v3atm_master_202302:
-    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel BASELINE baseline_v3atm_master_202302:
-    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel BASELINE baseline_v3atm_master_202302:
-    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_pg2 BASELINE baseline_v3atm_master_202302:
-    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 BASELINE baseline_v3atm_master_202302:
-    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 BASELINE baseline_v3atm_master_202302:
-    PASS SMS_Ln9.ne4_oQU240.F2010.compy_intel.eam-outfrq9s BASELINE baseline_v3atm_master_202302:
-    PASS SMS.ne4_oQU240.F2010.compy_intel.eam-cosplite BASELINE baseline_v3atm_master_202302:
-    PASS SMS_R_Ld5.ne4_ne4.FSCM-ARM97.compy_intel.eam-scm BASELINE baseline_v3atm_master_202302:
+cd /compyfs/wanh895/e3sm_scratch/TEST_aerosol-process-coupling-202302_20230224-171857
+./cs.status.20230224_180615_61zmt8 | grep BASELINE
+```
+
+Results:
+
+```
+    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel BASELINE baseline_master_0a642b7_20230224-171857:
+    PASS ERS_D.ne4_oQU240.F2010.compy_intel.eam-hommexx BASELINE baseline_master_0a642b7_20230224-171857:
+    PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 BASELINE baseline_master_0a642b7_20230224-171857:
+    PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 BASELINE baseline_master_0a642b7_20230224-171857:
+    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel BASELINE baseline_master_0a642b7_20230224-171857:
+    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel BASELINE baseline_master_0a642b7_20230224-171857:
+    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_pg2 BASELINE baseline_master_0a642b7_20230224-171857:
+    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 BASELINE baseline_master_0a642b7_20230224-171857:
+    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 BASELINE baseline_master_0a642b7_20230224-171857:
+    PASS SMS_Ln9.ne4_oQU240.F2010.compy_intel.eam-outfrq9s BASELINE baseline_master_0a642b7_20230224-171857:
+    PASS SMS.ne4_oQU240.F2010.compy_intel.eam-cosplite BASELINE baseline_master_0a642b7_20230224-171857:
+    PASS SMS_R_Ld5.ne4_ne4.FSCM-ARM97.compy_intel.eam-scm BASELINE baseline_master_0a642b7_20230224-171857:
 ```
 
 
-## 4.2 Stealth feature turned on
+## 4.4 Test results with the stealth feature turned on
 
-Script: [`3_e3sm_atm_stealth_tests.sh`](./scripts_for_testing_using_CIME/3_e3sm_atm_stealth_tests.sh)
+Commands:
+
+```
+cd /compyfs/wanh895/e3sm_scratch/TEST_aerosol-process-coupling-202302_20230224-171857
+./cs.status.20230224_184856_taa801 | grep Overall
+```
 
 Summary of results:
 
 ```
-PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 RUN
-PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 RUN
-test-scheduler took 1537.8152439594269 seconds
-```
-
-To see more detailed results, use
-
-```
-/compyfs/wanh895/e3sm_scratch/cs.status.20230223_130551_bfgg7l
+  ERP_Ln18.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 (Overall: PASS) details:
+  SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-cflx_cpl_2 (Overall: PASS) details:
 ```
