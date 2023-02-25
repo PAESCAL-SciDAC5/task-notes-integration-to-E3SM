@@ -42,7 +42,7 @@ to run multiple tests without having to issue one `create_test` command for each
 
 Note that the `.eam-...` strings occuring after compset names are the so-called "testmods", which specify namelist changes or `xmlchange` commands needed for the tests, see [explanation here](doc_testmods.md).
 
-## Usage
+## Test suite usage
 
 To run the `e3sm_atm_developer` suite and compare results with a baseline named `master` stored in the computer system's baseline area (e.g., `/compyfs/e3sm_baselines/${COMPILER}` on compy), use
 
