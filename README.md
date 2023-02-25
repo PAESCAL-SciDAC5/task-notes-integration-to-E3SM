@@ -1,6 +1,6 @@
 # Integrating PAESCAL codes to E3SM
 
-This is the landing page of PAESAL's task team working on integration with the E3SM project. For questions and comments, please contact
+This is the landing page of PAESCAL's task team working on integration with the E3SM project. For questions and comments, please contact
 
 - Wuyin Lin (Brookhaven National Laboratory)
 - Hui Wan (Pacific Northwest National Laboratory)
