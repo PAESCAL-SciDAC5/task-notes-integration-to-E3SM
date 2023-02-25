@@ -11,11 +11,12 @@ See [webpage](https://acme-climate.atlassian.net/wiki/spaces/NGDAP/pages/3691741
 ADD LINK HERER
 
 ---
----
 
 # Work log
 
-## Porting the code
+## 1. Porting the code
+
+Commit [51a100a](https://github.com/PAESCAL-SciDAC5/E3SM-fork/commit/51a100a80e0f6a2d957c32ada835e1d371e84b37).
 
 ### 1.1 CondiDiag1.0
 
@@ -65,6 +66,8 @@ ADD LINK HERER
 
 ### 1.2 Porting the Dec-2022 bug fix for branch runs
 
+Commit [17876ba](https://github.com/PAESCAL-SciDAC5/E3SM-fork/commit/17876ba3b940aa011e37b62a66143fb88f89ce6d).
+
 This is to make sure the simulation won't abort if a user requests new CondiDiag output when doing a branch run.
 
 ### 1.3 Porting dCAPE decomposition
@@ -75,6 +78,8 @@ This is to make sure the simulation won't abort if a user requests new CondiDiag
   - change `dcapemx` in `zm_conv.F90` from a module variable to a local variable or a dummy argument; 
   - add intent(in/out/inout) for various dummy arguments of `buoyan_dilute`.
 
+Commits [4967d24](https://github.com/PAESCAL-SciDAC5/E3SM-fork/commit/4967d241491a68165e3dd8cd03e3bba3b7b63cb9) and [2917987](https://github.com/PAESCAL-SciDAC5/E3SM-fork/commit/2917987e4c4dc516d9576bda754f1a096bf0cb60).
+
 **Xiaoliang's method of decomposing dCAPE**
 
    - dCAPE  = CAPE( new parcel, new environment ) - CAPE( old parcel, old environment )
@@ -82,6 +87,8 @@ This is to make sure the simulation won't abort if a user requests new CondiDiag
    - dCAPEe = CAPE( old parcel, new environment ) - CAPE( old parcel, old environment )
 
    The dCAPE calculation and decomposition is calculated in subroutine `compute_cape_diags` in `components/eam/src/physics/cam/misc_diagnostics.F90`.
+   
+   Last commit: [1afac6a](https://github.com/PAESCAL-SciDAC5/E3SM-fork/commit/1afac6afb4cf60d9f6f742100e98aa25456175d6)
    
 **Testing**
 
@@ -93,17 +100,17 @@ This is to make sure the simulation won't abort if a user requests new CondiDiag
 
 Wuyin, Hui, and Jianfeng met on 2023-02-22 and chose the following strategy:
 
-1. Create a baseline for the `e3sm_atm_developer` test suites using `master`, then run the same test suite using the new branch and compare with the baseline to verify that all tests pass.
+1. Create a baseline for the `e3sm_atm_developer` test suites using `master`, then run the same test suite using the feature branch and compare with the baseline to verify that all tests pass.
 2. Add a new test suite `eam_condidiag` that contains a few `ERP` and `SMS_D` tests with the new feature turned on. Verify that all tests pass.
 
 Note that step 2 requires 
 
 - defining new "testmods" that turn on CondiDiag, and 
-- creating a `eam_condidiag` test suite in `cime_config/tests.py`.
+- creating an `eam_condidiag` test suite in `cime_config/tests.py`.
 
 These are done in commit [d1ad6c](https://github.com/PAESCAL-SciDAC5/E3SM-fork/commit/d1ad6c6d5633a2875fd2fddeebe452b080ca6eb4).
 
-Here is how the new test suite looks like:
+The test suite is defined as
 
 ```
     "eam_condidiag" : {
@@ -117,11 +124,12 @@ Here is how the new test suite looks like:
 
 ## 2.2 Our script
 
-[`cime_tests_CondiDiag.sh`](scripts/cime_tests/cime_tests_CondiDiag.sh)
+The script [`cime_tests_CondiDiag.sh`](scripts/cime_tests/cime_tests_CondiDiag.sh) clones `master` and the feature branch, then do the tests described above.
+
 
 ## 2.3 Test results with the stealth feature turned off
 
-Commands for checking the outcome of comparison with baseline:
+Commands for checking the results of comparison with baseline:
 
 ```
 cd /compyfs/wanh895/e3sm_scratch/TEST_CondiDiag1.1_20230224-100506
