@@ -6,8 +6,8 @@
 # was based off.
 #
 # The script will
-#  - clone master and the feature branch into local directories, 
-#  - run the e3sm_atm_developer test suite with both branch and compare, and then
+#  - clone the master branch and the feature branch into local directories, 
+#  - run the e3sm_atm_developer test suite with both branches and compare, and then
 #  - run a new test suite to exercise the stealth feature.
 #
 # This script tests the implementation of a revised numerical coupling of some 
