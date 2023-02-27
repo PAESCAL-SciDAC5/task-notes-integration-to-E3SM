@@ -108,7 +108,9 @@ Note that step 2 requires
 - defining new "testmods" that turn on CondiDiag, and 
 - creating an `eam_condidiag` test suite in `cime_config/tests.py`.
 
-These are done in commit [d1ad6c](https://github.com/PAESCAL-SciDAC5/E3SM-fork/commit/d1ad6c6d5633a2875fd2fddeebe452b080ca6eb4).
+These are done in commits 
+[d1ad6c6](https://github.com/PAESCAL-SciDAC5/E3SM-fork/commit/d1ad6c6d5633a2875fd2fddeebe452b080ca6eb4) and
+[2868de3](https://github.com/PAESCAL-SciDAC5/E3SM-fork/commit/2868de3ccfd55b8d2e80ff8969e5293bbf882feb).
 
 The `eam_condidiag` test suite is defined as
 
