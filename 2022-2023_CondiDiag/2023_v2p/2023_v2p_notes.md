@@ -101,7 +101,7 @@ This is to make sure the simulation won't abort if a user requests new CondiDiag
 Wuyin, Hui, and Jianfeng met on 2023-02-22 and chose the following strategy:
 
 1. Create a baseline for the `e3sm_atm_developer` test suites using `master`, then run the same test suite using the feature branch and compare with the baseline to verify that all tests pass.
-2. Add a new test suite `eam_condidiag` that contains a few `ERP` and `SMS_D` tests with the new feature turned on. Verify that all tests pass.
+2. Add a new test suite `eam_condidiag` that contains some `ERP` and `SMS_D` tests with the new feature turned on. Verify that all tests pass.
 
 Note that step 2 requires 
 
@@ -110,17 +110,22 @@ Note that step 2 requires
 
 These are done in commit [d1ad6c](https://github.com/PAESCAL-SciDAC5/E3SM-fork/commit/d1ad6c6d5633a2875fd2fddeebe452b080ca6eb4).
 
-The test suite is defined as
+The `eam_condidiag` test suite is defined as
 
 ```
     "eam_condidiag" : {
         "tests"   : (
+            "SMS_D_Ln5.ne4_oQU240.F2010",
             "SMS_D_Ln5.ne4_oQU240.F2010.eam-condidiag_dcape",
             "ERP_Ld3.ne4_oQU240.F2010.eam-condidiag_dcape",
             "ERP_Ld3.ne4_oQU240.F2010.eam-condidiag_rhi",
             )
         },
 ```
+
+- Results of the two `SMS_D` tests can be manaully compared for the global statistics in `atm.log` to verify that turning on CondiDiag does not change the simulation results.
+- `ERP...eam-condidiag_dcape` exercises CondiDiag's dCAPE decomposition capability. This test might fail if the `buoyan_dilute` subroutine is changed by other developers but the `compute_cape_diags` subroutine in CondiDiag is not updated accordingly.
+- `ERP_...eam-condidiag_rhi` exercises both the budget analysis and conditional sampling capabilities in CondiDiag.
 
 ## 2.2 Our script
 
