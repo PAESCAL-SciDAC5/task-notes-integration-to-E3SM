@@ -126,7 +126,7 @@ The `eam_condidiag` test suite is defined as
 ```
 
 - Results of the two `SMS_D` tests can be manaully compared for the global statistics in `atm.log` to verify that turning on CondiDiag does not change the simulation results.
-- `ERP...eam-condidiag_dcape` exercises CondiDiag's dCAPE decomposition capability. This test might fail if the `buoyan_dilute` subroutine is changed by other developers but the `compute_cape_diags` subroutine in CondiDiag is not updated accordingly.
+- `ERP...eam-condidiag_dcape` exercises CondiDiag's dCAPE decomposition capability. This test might fail if the `buoyan_dilute` subroutine in the ZM deep convection parameterization has been changed but the `compute_cape_diags` subroutine in CondiDiag is not updated accordingly.
 - `ERP_...eam-condidiag_rhi` exercises both the budget analysis and conditional sampling capabilities in CondiDiag.
 
 ## 2.2 Our script
@@ -139,25 +139,25 @@ The script [`cime_tests_CondiDiag.sh`](scripts/cime_tests/cime_tests_CondiDiag.s
 Commands for checking the results of comparison with baseline:
 
 ```
-cd /compyfs/wanh895/e3sm_scratch/TEST_CondiDiag1.1_20230224-100506
-./cs.status.20230224_111134_1ssykv | grep BASELINE
+cd /compyfs/wanh895/e3sm_scratch/TEST_CondiDiag1.1_in_EAMv2p_20230226-184544/
+./cs.status.20230226_193344_9otkrz | grep BASELINE
 ```
 
 Results:
 
 ```
-    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel BASELINE baseline_master_860eb7b_20230224-100506:
-    PASS ERS_D.ne4_oQU240.F2010.compy_intel.eam-hommexx BASELINE baseline_master_860eb7b_20230224-100506:
-    PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 BASELINE baseline_master_860eb7b_20230224-100506:
-    PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 BASELINE baseline_master_860eb7b_20230224-100506:
-    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel BASELINE baseline_master_860eb7b_20230224-100506:
-    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel BASELINE baseline_master_860eb7b_20230224-100506:
-    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_pg2 BASELINE baseline_master_860eb7b_20230224-100506:
-    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 BASELINE baseline_master_860eb7b_20230224-100506:
-    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 BASELINE baseline_master_860eb7b_20230224-100506:
-    PASS SMS_Ln9.ne4_oQU240.F2010.compy_intel.eam-outfrq9s BASELINE baseline_master_860eb7b_20230224-100506:
-    PASS SMS.ne4_oQU240.F2010.compy_intel.eam-cosplite BASELINE baseline_master_860eb7b_20230224-100506:
-    PASS SMS_R_Ld5.ne4_ne4.FSCM-ARM97.compy_intel.eam-scm BASELINE baseline_master_860eb7b_20230224-100506:
+    PASS ERP_Ln18.ne4_oQU240.F2010.compy_intel BASELINE baseline_master_860eb7b_20230226-184544:
+    PASS ERS_D.ne4_oQU240.F2010.compy_intel.eam-hommexx BASELINE baseline_master_860eb7b_20230226-184544:
+    PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 BASELINE baseline_master_860eb7b_20230226-184544:
+    PASS ERS_Ld3.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 BASELINE baseline_master_860eb7b_20230226-184544:
+    PASS SMS_D_Ln5.ne4_oQU240.F2010.compy_intel BASELINE baseline_master_860eb7b_20230226-184544:
+    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel BASELINE baseline_master_860eb7b_20230226-184544:
+    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_pg2 BASELINE baseline_master_860eb7b_20230226-184544:
+    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2 BASELINE baseline_master_860eb7b_20230226-184544:
+    PASS SMS_Ln5.ne4pg2_oQU480.F2010.compy_intel.eam-thetahy_sl_pg2_ftype0 BASELINE baseline_master_860eb7b_20230226-184544:
+    PASS SMS_Ln9.ne4_oQU240.F2010.compy_intel.eam-outfrq9s BASELINE baseline_master_860eb7b_20230226-184544:
+    PASS SMS.ne4_oQU240.F2010.compy_intel.eam-cosplite BASELINE baseline_master_860eb7b_20230226-184544:
+    PASS SMS_R_Ld5.ne4_ne4.FSCM-ARM97.compy_intel.eam-scm BASELINE baseline_master_860eb7b_20230226-184544:
 ```
 
 
@@ -166,8 +166,8 @@ Results:
 Commands:
 
 ```
-cd /compyfs/wanh895/e3sm_scratch/TEST_CondiDiag1.1_20230224-100506
-./cs.status.20230224_114641_gnfqd6 | grep Overall
+cd /compyfs/wanh895/e3sm_scratch/TEST_CondiDiag1.1_in_EAMv2p_20230226-184544/
+./cs.status.20230226_200056_a1j9zl | grep Overall
 ```
 
 Summary of results:
@@ -175,5 +175,13 @@ Summary of results:
 ```
   ERP_Ld3.ne4_oQU240.F2010.compy_intel.eam-condidiag_dcape (Overall: PASS) details:
   ERP_Ld3.ne4_oQU240.F2010.compy_intel.eam-condidiag_rhi (Overall: PASS) details:
+  SMS_D_Ln5.ne4_oQU240.F2010.compy_intel (Overall: PASS) details:
   SMS_D_Ln5.ne4_oQU240.F2010.compy_intel.eam-condidiag_dcape (Overall: PASS) details:
+```
+
+Global statistics from the two `SMS_D` tests:
+
+```
+ nstep, te        6   0.25849911590488310E+10   0.25849847059015503E+10  -0.89220353777641015E-04   0.98518592706630399E+05
+ nstep, te        6   0.25849911590488310E+10   0.25849847059015503E+10  -0.89220353777641015E-04   0.98518592706630399E+05
 ```
