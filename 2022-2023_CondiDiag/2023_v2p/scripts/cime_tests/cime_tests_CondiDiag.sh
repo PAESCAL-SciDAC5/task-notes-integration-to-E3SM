@@ -6,11 +6,11 @@
 # was based off.
 #
 # The script will
-#  - clone master and the feature branch into local directories, 
-#  - run the e3sm_atm_developer test suite with both branch and compare, and then
+#  - clone the master branch and the feature branch into local directories, 
+#  - run the e3sm_atm_developer test suite with both branches and compare, and then
 #  - run a new test suite to exercise the stealth feature.
 #
-# The script tests the implementation of CondiDiag1.1 on top of commit 860eb7b of 
+# This script tests the implementation of CondiDiag1.1 on top of commit 860eb7b of 
 # the E3SM code, using the supercomputer Compy at PNNL.
 #
 #  - If you would like to do exactly the same, this script should work out of the box;
