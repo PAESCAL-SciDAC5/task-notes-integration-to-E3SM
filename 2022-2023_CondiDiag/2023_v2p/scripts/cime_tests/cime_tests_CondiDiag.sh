@@ -39,7 +39,9 @@ do_run_new_testsuite=true
 #---------------------------------
 
  readonly test_id=`date "+%Y%m%d-%H%M%S"`      # use a new time tag
-#readonly test_id="20230224-100506"            # use an old time tag
+#readonly test_id="20230228-162721"      # use a new time tag
+ readonly project="m4359"
+ readonly walltime="01:00:00"
 
 # Code to be cloned and tested
 
@@ -57,13 +59,14 @@ new_testsuite="eam_condidiag"       # Script will run this suite w/o baseline co
 
 # Local directories
 
-readonly test_root="/compyfs/${USER}/e3sm_scratch/TEST_"${branch_shortname}"_"${test_id}
+readonly test_root="/global/cfs/projectdirs/m4359/jli628/SuperBFB/TEST_"${branch_shortname}"_"${test_id}
 
 readonly code_root=${test_root}"/codes/"
 readonly branch_code_dir=${branch_shortname}
 readonly master_code_dir="master_"${master_hash}
 
 readonly baseline_name="baseline_master_"${master_hash}"_"${test_id}
+readonly baseline_path="${test_root}/baseline"
 
 mkdir -p ${code_root}
 echo "Cloned codes can be found in "${code_root}
@@ -110,7 +113,7 @@ fi
 if [ "${do_generate_baseline,,}" == "true" ]; then
 
    cd ${code_root}/${master_code_dir}/cime/scripts
-   ./create_test ${std_testsuite} --generate -b ${baseline_name} --wait --output-root ${test_root}
+   ./create_test ${std_testsuite} --generate -b ${baseline_name} -p ${project} --wait --output-root ${test_root} --baseline-root ${baseline_path} --walltime ${walltime}
 
 fi
 
@@ -130,7 +133,7 @@ fi
 if [ "${do_compr_to_baseline,,}" == "true" ]; then
 
    cd ${code_root}/${branch_code_dir}/cime/scripts
-   ./create_test ${std_testsuite} --compare -b ${baseline_name} --wait --output-root ${test_root}
+   ./create_test ${std_testsuite} --compare -b ${baseline_name} -p ${project} --wait --output-root ${test_root} --baseline-root ${baseline_path} --walltime ${walltime}
 
 fi
 
@@ -140,6 +143,6 @@ fi
 if [ "${do_run_new_testsuite,,}" == "true" ]; then
 
    cd ${code_root}/${branch_code_dir}/cime/scripts
-   ./create_test ${new_testsuite} --wait --output-root ${test_root}
+   ./create_test ${new_testsuite} -p ${project} --wait --output-root ${test_root} --walltime ${walltime}
 
 fi
