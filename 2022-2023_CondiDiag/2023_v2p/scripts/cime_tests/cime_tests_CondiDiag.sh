@@ -11,11 +11,11 @@
 #  - run a new test suite to exercise the stealth feature.
 #
 # This script tests the implementation of CondiDiag1.1 on top of commit 860eb7b of 
-# the E3SM code, using the supercomputer Compy at PNNL.
+# the E3SM code, using supercomputers NERSC.
 #
 #  - If you would like to do exactly the same, this script should work out of the box;
-#  - If you would like to do the same tests but use a different computer, then
-#    ${test_root} needs to be revised.
+#  - If you would like to do the same tests but at a different computing center, then
+#    ${test_root} and ${project} need to be revised.
 #
 # Caveat: if you use this script in small steps (i.e., by turning the "do_..." switches 
 #         on or off and executing the script multiple times), please note that 
