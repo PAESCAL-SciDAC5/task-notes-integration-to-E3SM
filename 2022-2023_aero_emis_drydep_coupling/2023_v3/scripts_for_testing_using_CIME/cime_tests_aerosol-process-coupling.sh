@@ -11,12 +11,9 @@
 #  - run a new test suite to exercise the stealth feature.
 #
 # This script tests the implementation of a revised numerical coupling of some 
-# aerosol-related processes against commit 0a642b7 of the E3SM code from the v3atm repo,
-# using the supercomputer Compy at PNNL.
-#
-#  - If you would like to do exactly the same, this script should work out of the box;
-#  - If you would like to do the same tests but use a different computer, then
-#    ${test_root} needs to be revised.
+# aerosol-related processes against commit 0a642b7 of the E3SM code from the v3atm repo
+# using supercomputers at NERSC. Please check if you need to change
+#  ${test_root} and ${project} for running your own tests.
 #
 # Caveat: if you use this script in small steps (i.e., by turning the "do_..." switches 
 #         on or off and executing the script multiple times), please note that 
@@ -60,7 +57,7 @@ new_testsuite="e3sm_atm_stealth"    # Script will run this suite w/o baseline co
 
 # Local directories
 
-readonly test_root="/global/cfs/projectdirs/m4359/jli628/SuperBFB/TEST_"${branch_shortname}"_"${test_id}
+readonly test_root="/global/cfs/projectdirs/"${project}"/"${USER}"/SuperBFB/TEST_"${branch_shortname}"_"${test_id}
 
 readonly code_root=${test_root}"/codes/"
 readonly branch_code_dir=${branch_shortname}
