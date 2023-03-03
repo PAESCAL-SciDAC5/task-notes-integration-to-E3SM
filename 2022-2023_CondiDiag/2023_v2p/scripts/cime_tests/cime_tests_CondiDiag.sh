@@ -11,11 +11,8 @@
 #  - run a new test suite to exercise the stealth feature.
 #
 # This script tests the implementation of CondiDiag1.1 on top of commit 860eb7b of 
-# the E3SM code, using the supercomputer Compy at PNNL.
-#
-#  - If you would like to do exactly the same, this script should work out of the box;
-#  - If you would like to do the same tests but use a different computer, then
-#    ${test_root} needs to be revised.
+# the E3SM code, using supercomputers at NERSC. Please check if you need to change
+#  ${test_root} and ${project} for running your tests.
 #
 # Caveat: if you use this script in small steps (i.e., by turning the "do_..." switches 
 #         on or off and executing the script multiple times), please note that 
@@ -27,7 +24,7 @@
 #
 # History:
 #   Test strategy chosen by Wuyin Lin and Hui Wan, 2023-02
-#   First version of script written by Hui Wan, 2023-02.
+#   First version of script by Hui Wan and Jianfeng Li, 2023-02/03.
 #======================================================================================
 
 do_fetch_master_code=true
@@ -59,7 +56,7 @@ new_testsuite="eam_condidiag"       # Script will run this suite w/o baseline co
 
 # Local directories
 
-readonly test_root="/global/cfs/projectdirs/m4359/jli628/SuperBFB/TEST_"${branch_shortname}"_"${test_id}
+readonly test_root="/global/cfs/projectdirs/"${project}"/"${USER}"/SuperBFB/TEST_"${branch_shortname}"_"${test_id}
 
 readonly code_root=${test_root}"/codes/"
 readonly branch_code_dir=${branch_shortname}
