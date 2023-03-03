@@ -59,7 +59,7 @@ new_testsuite="eam_condidiag"       # Script will run this suite w/o baseline co
 
 # Local directories
 
-readonly test_root="/global/cfs/projectdirs/m4359/jli628/SuperBFB/TEST_"${branch_shortname}"_"${test_id}
+readonly test_root="/global/cfs/projectdirs/"${project}"/"${USER}"/SuperBFB/TEST_"${branch_shortname}"_"${test_id}
 
 readonly code_root=${test_root}"/codes/"
 readonly branch_code_dir=${branch_shortname}
