@@ -28,7 +28,7 @@
 #
 # History:
 #   Test strategy chosen by Wuyin Lin and Hui Wan, 2023-02
-#   First version of script written by Hui Wan, 2023-02.
+#   First version of script by Hui Wan and Jianfeng Li, 2023-02/03
 #======================================================================================
 
 do_fetch_master_code=true
