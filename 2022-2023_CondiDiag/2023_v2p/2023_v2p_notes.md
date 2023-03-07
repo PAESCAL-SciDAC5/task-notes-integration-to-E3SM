@@ -8,7 +8,7 @@ See [webpage](https://acme-climate.atlassian.net/wiki/spaces/NGDAP/pages/3691741
 
 # PR
 
-ADD LINK HERER
+[PR #5509](https://github.com/E3SM-Project/E3SM/pull/5509)
 
 ---
 
