@@ -39,13 +39,13 @@ readonly DEBUG_COMPILE=false
 
 # Run options
 readonly MODEL_START_TYPE="hybrid"  # 'initial', 'continue', 'branch', 'hybrid'
-readonly START_DATE="1850-01-01"
+readonly START_DATE="1986-01-01"
 
 # Additional options for 'branch' and 'hybrid'
 readonly GET_REFCASE=TRUE
-readonly RUN_REFDIR="/global/cfs/projectdirs/m4359/jli628/v2.1_historical_0101/init"
-readonly RUN_REFCASE="v2_1.LR.piControl"
-readonly RUN_REFDATE="0101-01-01"   # same as MODEL_START_DATE for 'branch', can be different for 'hybrid'
+readonly RUN_REFDIR="/global/cfs/projectdirs/m4359/jli628/v2.1_historical_0101/1986-01-01-00000"
+readonly RUN_REFCASE="v2_1.LR.historical_0101"
+readonly RUN_REFDATE="1986-01-01"   # same as MODEL_START_DATE for 'branch', can be different for 'hybrid'
 
 # Set paths
 readonly CODE_ROOT=$(pwd)     #need to change
@@ -60,12 +60,12 @@ readonly CASE_SCRIPTS_DIR=${CASE_ROOT}/case_scripts
 readonly CASE_RUN_DIR=${CASE_ROOT}/run
 #PELAYOUT doesn't work on pm-cpu
 #readonly PELAYOUT="X2"   #Allowed options are  ('S','M','L','X1','X2','[0-9]x[0-9]','[0-9]').
-readonly WALLTIME="00:30:00"
+readonly WALLTIME="12:00:00"
 readonly QUEUE="regular"
-readonly STOP_OPTION="ndays"
-readonly STOP_N="5"
-readonly REST_OPTION="ndays"
-readonly REST_N="5"
+readonly STOP_OPTION="nyears"
+readonly STOP_N="10"
+readonly REST_OPTION="nmonths"
+readonly REST_N="1"
 readonly RESUBMIT="0"
 readonly DO_SHORT_TERM_ARCHIVING=false
 
@@ -154,12 +154,6 @@ cat << EOF >> user_nl_eam
  fincl5 = 'PRECT','PRECC','TUQ','TVQ','QFLX','SHFLX','U90M','V90M'
  fincl6 = 'CLDTOT_ISCCP','MEANCLDALB_ISCCP','MEANTAU_ISCCP','MEANPTOP_ISCCP','MEANTB_ISCCP','CLDTOT_CAL','CLDTOT_CAL_LIQ','CLDTOT_CAL_ICE','CLDTOT_CAL_UN','CLDHGH_CAL','CLDHGH_CAL_LIQ','CLDHGH_CAL_ICE','CLDHGH_CAL_UN','CLDMED_CAL','CLDMED_CAL_LIQ','CLDMED_CAL_ICE','CLDMED_CAL_UN','CLDLOW_CAL','CLDLOW_CAL_LIQ','CLDLOW_CAL_ICE','CLDLOW_CAL_UN'
  fincl7 = 'O3', 'PS', 'TROP_P'
-
- history_aerosol=.true.
- history_aero_optics=.true.
- history_verbose=.true.
- history_budget=.true.
- history_amwg=.true.
 
 ! Additional retuning
  clubb_tk1 = 268.15D0
